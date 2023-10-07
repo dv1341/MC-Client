@@ -1,9 +1,10 @@
 ﻿  dllmain.cpp
 C:\Users\Damien V\Documents\GitHub\MC-Client\MC Client\Source\dllmain.cpp(20,14): warning C4553: '==': result of expression not used; did you intend '='?
-  Previous IPDB and IOBJ mismatch, fall back to full compilation.
 LINK : warning LNK4098: defaultlib 'LIBCMTD' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
 C:\Users\Damien V\Documents\GitHub\MC-Client\MC Client\include\SigFinder.h(54): warning C4715: 'SigFinder::findSig': not all control paths return a value
-  All 114 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  2 of 114 functions ( 1.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   MC Client.vcxproj -> C:\Users\Damien V\Documents\GitHub\MC-Client\x64\Release\MC Client.dll

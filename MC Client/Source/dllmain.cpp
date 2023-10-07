@@ -22,7 +22,8 @@ void KeymapDetour(uint64_t key, bool held)
 
 void Init() {
 	if (MH_Initialize() == MH_OK) {
-		uintptr_t keymapAddr = SigFinder::findSig("41 89 14 80 8B 05 ? ? ? ? 48 8B 15 ? ? ? ? 48 3B 15 ? ? ? ? 89 44 24 28");//0x1EE2F0(1.20.31)
+		//future note better if you dont put as many ? as you can (if you cant find any do a bigger sig if you have to much or less if you dont get one)
+		uintptr_t keymapAddr = SigFinder::findSig("41 89 14 ? 8B 05 78 AC 0E 05");//0x1EE2F0(1.20.31)
 
 		if (MH_CreateHook((void*)keymapAddr, &KeymapDetour, reinterpret_cast<LPVOID*>(&_SendKey)) == MH_OK) {
 			MH_EnableHook((void*)keymapAddr);
