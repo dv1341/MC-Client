@@ -18,6 +18,9 @@
     <ClInclude Include="Include\MinHook.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\SigFinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\dllmain.cpp">
@@ -26,5 +29,8 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="MinHook\libMinHook.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="sigseditor.txt" />
   </ItemGroup>
 </Project>

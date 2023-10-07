@@ -1,10 +1,13 @@
 #include <Windows.h>
 #include <cstdint>
 #include <map>
+#include <Psapi.h>
 
 // Include Minhook
 #include "../include/MinHook.h"
 
+// Sig Finder
+#include "../include/SigFinder.h"
 
 typedef void(__thiscall* KeymapHook)(uint64_t, bool);
 KeymapHook _SendKey;
@@ -13,18 +16,13 @@ std::map<uint64_t, bool> keymap;
 
 void KeymapDetour(uint64_t key, bool held)
 {
-	_SendKey(key, held);
+	//_SendKey(key, held);
 	keymap[key] == held;
 }
 
 void Init() {
 	if (MH_Initialize() == MH_OK) {
-		uintptr_t baseAddr = (uintptr_t)GetModuleHandleA("Minecraft.Windows.exe");
-
-		// look for unknow initial value (byte) hold W key in menu and use hotkey to search for one then let go and search for 0
-		// find out what accesses the address then press W again in menu then show dissasembeler
-		//  then copy the first one to clipboard only adress and add "0x" to the begining (remember to scan in minecraft.windows.exe in memory scan options)
-		uintptr_t keymapAddr = baseAddr + 0x1EE2F0;
+		uintptr_t keymapAddr = SigFinder::findSig("41 89 14 80 8B 05 ? ? ? ? 48 8B 15 ? ? ? ? 48 3B 15 ? ? ? ? 89 44 24 28");//0x1EE2F0(1.20.31)
 
 		if (MH_CreateHook((void*)keymapAddr, &KeymapDetour, reinterpret_cast<LPVOID*>(&_SendKey)) == MH_OK) {
 			MH_EnableHook((void*)keymapAddr);

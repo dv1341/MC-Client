@@ -20,12 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\MinHook.h" />
+    <ClInclude Include="Include\SigFinder.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\dllmain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="MinHook\libMinHook.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="sigseditor.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

@@ -1,0 +1,9 @@
+Minecraft.Windows.exe+1EE306 - 41 89 14 ?          
+Minecraft.Windows.exe+1EE30A - 8B 05 78 AC 0E 05       
+Minecraft.Windows.exe+1EE310 - 48 8B 15 B1 6C 33 05    
+Minecraft.Windows.exe+1EE317 - 48 3B 15 B2 6C 33 05    
+Minecraft.Windows.exe+1EE31E - 89 44 24 ?   
+
+41 89 14 ? 8B 05 78 AC 0E 05 48 8B 15 B1 6C 33 05 48 3B 15 B2 6C 33 05 89 44 24 ?
+
+
